@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package dubble;
+
+service Dubble {
+
+    rpc translateAndVoiceStream(stream AudioData) returns (stream AudioData);
+}
+
+message AudioData {
+    bytes data = 1;
+    int32 channels = 2;
+    int32 rate = 3;
+    int32 format = 5;
+}
